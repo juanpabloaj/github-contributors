@@ -13,3 +13,5 @@ I like use the command::
     git shortlog -s -n
 
 but with shortlog, I don't obtain the real github user account.
+
+With this is more easy edit the contributors section in the readme file.
