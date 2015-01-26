@@ -20,6 +20,7 @@ setup(
     license="MIT",
     author="JuanPablo AJ",
     author_email="jpabloaj@gmail.com",
+    url="https://github.com/juanpabloaj/github-contributors.git",
     packages=['github_contributors'],
     install_requires=install_requires,
     long_description=long_description,
