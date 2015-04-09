@@ -43,7 +43,7 @@ def main():
         hash_commit = contributors[author]['hash']
         n_commits = contributors[author]['commits']
         author_url = author_url_from_hash(origin, hash_commit)
-        print n_commits, author, author_url
+        print u'{} {} {}'.format(n_commits, author, author_url)
 
 
 if __name__ == '__main__':
