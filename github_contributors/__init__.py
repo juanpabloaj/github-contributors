@@ -41,11 +41,18 @@ def generate_markdown(author, url):
     return u'[{}]({})'.format(author, url)
 
 
+def generate_rst(author, url):
+    return u'`{} <{}>`_'.format(author, url)
+
+
 def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
         '-m', '--markdown', help='Show as markdown', action='store_true'
+    )
+    parser.add_argument(
+        '-r', '--rst', help='Show as rst', action='store_true'
     )
 
     args = parser.parse_args()
@@ -59,6 +66,8 @@ def main():
 
         if args.markdown:
             print generate_markdown(author, author_url)
+        elif args.rst:
+            print generate_rst(author, author_url)
         else:
             print u'{} {} {}'.format(n_commits, author, author_url)
 
