@@ -36,5 +36,6 @@ Show as markdown
 Show as rst
 
 ::
+
     github-contributors -s
     `user1 <https://github.com/github_user1>`_
