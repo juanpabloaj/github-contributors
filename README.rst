@@ -22,3 +22,19 @@ Install
 ::
 
     pip install github-contributors
+
+Usage
+=====
+
+Show as markdown
+
+::
+
+    github-contributors -m
+    [user1](https://github.com/github_user1)
+
+Show as rst
+
+::
+    github-contributors -s
+    `user1 <https://github.com/github_user1>`_
