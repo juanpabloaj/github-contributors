@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import requests
 from git import Repo
+import argparse
 
 
 def get_remote(name='origin'):
@@ -36,14 +37,30 @@ def get_contributors_info():
     return contributors
 
 
+def generate_markdown(author, url):
+    return u'[{}]({})'.format(author, url)
+
+
 def main():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        '-m', '--markdown', help='Show as markdown', action='store_true'
+    )
+
+    args = parser.parse_args()
+
     origin = get_remote()
     contributors = get_contributors_info()
     for author in contributors.keys():
         hash_commit = contributors[author]['hash']
         n_commits = contributors[author]['commits']
         author_url = author_url_from_hash(origin, hash_commit)
-        print u'{} {} {}'.format(n_commits, author, author_url)
+
+        if args.markdown:
+            print generate_markdown(author, author_url)
+        else:
+            print u'{} {} {}'.format(n_commits, author, author_url)
 
 
 if __name__ == '__main__':
